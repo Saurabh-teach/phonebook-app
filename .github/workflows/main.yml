@@ -51,7 +51,9 @@ jobs:
       run: npm ci
       
     - name: Fix vitest permissions
-      run: chmod +x ./node_modules/.bin/vitest
-
+      run: |
+        ls -la ./node_modules/.bin/
+        chmod -R +x ./node_modules/.bin/
+        
     - name: Run tests
       run: npx vitest run
