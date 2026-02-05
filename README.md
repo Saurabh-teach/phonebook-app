@@ -1,40 +1,100 @@
-<<<<<<< HEAD
-# Phonebook App
+# 📇 Phonebook App
 
-A full-stack CRUD application for managing contacts.
+A modern, full-stack Contact Management System built with **FastAPI**, **Vue.js 3**, and **PostgreSQL**. This project demonstrates a complete development lifecycle, including containerization with Docker and CI/CD with GitHub Actions.
 
-## Stack
-- **Backend:** FastAPI, SQLAlchemy, Pydantic, PostgreSQL
-- **Frontend:** Vue 3, Vite, Pinia, Axios
-- **Infrastructure:** Docker Compose
+---
 
-## Prerequisites
-- Docker & Docker Compose
-- (Optional) Node.js & Python 3.12 for local development without Docker
+## ✨ Features
+- **Full CRUD Operations**: Create, view, update, and delete contacts with ease.
+- **Smart Validation**: Real-time validation for phone numbers, emails (optional), and mandatory fields.
+- **Modern UI**: A responsive, clean interface using Vue 3, Vite, and Pinia for state management.
+- **Robust Backend**: Fast and safe RESTful API powered by FastAPI and SQLAlchemy.
+- **Database Consistency**: PostgreSQL for reliable, persistent data storage.
+- **Testing Suite**: Automated unit tests for both Backend (Pytest) and Frontend (Vitest).
+- **CI/CD Integrated**: Automated testing on every push via GitHub Actions.
 
-## Running with Docker (Recommended)
+---
 
-1. Build and start the services:
+## 🛠️ Tech Stack
+- **Backend**: Python 3.10+, FastAPI, SQLAlchemy, PostgreSQL, Pydantic.
+- **Frontend**: Vue.js 3, Vite, Pinia, Axios.
+- **DevOps**: Docker, Docker Compose, GitHub Actions.
+
+---
+
+## 🚀 Getting Started with Docker (Fastest)
+
+Run the entire application (including the database) inside isolated containers:
+
+1. **Clone the repository** (if not already done).
+2. **Launch with Docker Compose**:
    ```bash
-   docker compose up --build
+   docker-compose up --build
    ```
+3. **Open your browser**:
+   - **App**: [http://localhost:5173](http://localhost:5173)
+   - **API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
-2. Access the application:
-   - Frontend: [http://localhost:5173](http://localhost:5173)
-   - Backend API Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+---
 
-## Local Development (Manual)
+## 💻 Local Development Setup
 
-### Backend
-1. `cd backend`
-2. `pip install -r requirements.txt`
-3. Ensure PostgreSQL is running and update `DATABASE_URL` env var.
-4. `uvicorn main:app --reload`
+If you prefer to run the components manually on your machine:
 
-### Frontend
-1. `cd frontend`
-2. `npm install`
-3. `npm run dev`
-=======
-# phonebook-app
->>>>>>> dce7659dba66a235d171033d68e34c26741e6fb9
+### 1. Prerequisites
+- **Python 3.10+**
+- **Node.js 20+**
+- **PostgreSQL Server** (e.g., v16)
+
+### 2. Backend (FastAPI)
+```bash
+cd backend
+python -m venv .venv
+.\.venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+*Note: Update `database.py` with your local PostgreSQL credentials.*
+
+### 3. Frontend (Vue 3)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## 🧪 Testing
+
+We ensure quality through comprehensive automated testing.
+
+### Backend Unit Tests
+Powered by **Pytest** and **Httpx**. Covers API logic and CRUD flows.
+```bash
+cd backend
+python -m pytest
+```
+
+### Frontend Unit Tests
+Powered by **Vitest** and **Vue Test Utils**. Covers component rendering and state logic.
+```bash
+cd frontend
+npm run test:unit
+```
+
+---
+
+## 📦 Project Deliverables
+- `backend/`: FastAPI source code, models, and migrations.
+- `frontend/`: Vue 3 components, store, and tests.
+- `docker-compose.yml`: Multi-service orchestration.
+- `.github/workflows/`: CI/CD automation logic.
+- `README.md`: This comprehensive guide.
+
+---
+
+## 💡 Implementation Hints Used
+- **Postman/cURL Friendly**: The backend is designed for easy testing via Swagger UI (`/docs`).
+- **Official Images**: Docker setup uses `python:3.12-slim`, `node:20-alpine`, and `postgres:16-alpine`.
+- **Modern Tooling**: Project scaffolded with Vite for lightning-fast frontend development.
