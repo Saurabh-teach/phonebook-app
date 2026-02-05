@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Phonebook App
 
 A full-stack CRUD application for managing contacts.
@@ -34,3 +35,6 @@ A full-stack CRUD application for managing contacts.
 1. `cd frontend`
 2. `npm install`
 3. `npm run dev`
+=======
+# phonebook-app
+>>>>>>> dce7659dba66a235d171033d68e34c26741e6fb9
